@@ -139,4 +139,59 @@ ffmpeg -encoders | grep nvenc
 
 For memory issues, adjust chunk_duration and frames_per_chunk in the VideoInterpreter class initialization.
 
+## Verifying CUDA Installation
+
+To verify that CUDA is properly configured for this project to run, execute:
+
+`python verify_cuda.py`
+
+This should return something like this:
+
+```bash
+python verify_cuda.py
+2025-01-05 17:48:12,986 - INFO - NVIDIA Driver Info:
+Sun Jan  5 17:48:12 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.183.01             Driver Version: 535.183.01   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla T4                       Off | 00000001:00:00.0 Off |                    0 |
+| N/A   38C    P0              26W /  70W |    438MiB / 15360MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A       853      C   .../miniconda3/envs/comfyui/bin/python      152MiB |
+|    0   N/A  N/A   1234589      C   /usr/local/bin/python                       282MiB |
++---------------------------------------------------------------------------------------+
+
+2025-01-05 17:48:13,040 - INFO - CUDA Toolkit Info:
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Tue_Aug_15_22:02:13_PDT_2023
+Cuda compilation tools, release 12.2, V12.2.140
+Build cuda_12.2.r12.2/compiler.33191640_0
+
+2025-01-05 17:48:13,040 - INFO - PyTorch version: 2.2.1
+2025-01-05 17:48:13,062 - INFO - CUDA available: True
+2025-01-05 17:48:13,063 - INFO - CUDA version: 11.8
+2025-01-05 17:48:13,077 - INFO - GPU device: _CudaDeviceProperties(name='Tesla T4', major=7, minor=5, total_memory=14930MB, multi_processor_count=40)
+2025-01-05 17:48:13,077 - INFO - Current GPU device: 0
+2025-01-05 17:48:13,077 - INFO - GPU count: 1
+2025-01-05 17:48:13,077 - INFO - 
+Verification Summary:
+2025-01-05 17:48:13,077 - INFO - NVIDIA Driver: ✓ PASSED
+2025-01-05 17:48:13,077 - INFO - CUDA Toolkit: ✓ PASSED
+2025-01-05 17:48:13,077 - INFO - PyTorch CUDA: ✓ PASSED
+2025-01-05 17:48:13,077 - INFO - 
+CUDA installation verified successfully!
+```
+
 
