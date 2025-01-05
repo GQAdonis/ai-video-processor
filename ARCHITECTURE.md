@@ -98,4 +98,40 @@ This video processing system segments and analyzes videos using a combination of
 
 This architecture provides a balanced approach to video understanding, optimizing for both performance and resource constraints while maintaining high-quality interpretations.
 
+# Expected Performance
 
+Based on web search results, the accuracy of our implementation using PG-Video-LLaVA can be broken down across several metrics:
+
+## Core Performance Metrics
+- MSRVD-QA: 64.1% accuracy
+- MSRVTT-QA: 51.6% accuracy
+- TGIF-QA: 66.8% accuracy
+- ActivityNet-QA: 39.9% accuracy[3]
+
+## Quality Dimensions
+- Correctness: 2.84 out of 5
+- Detail Orientation: 2.97 out of 5
+- Contextual Understanding: 3.22 out of 5
+- Temporal Understanding: 2.54 out of 5
+- Consistency: 3.56 out of 5[4]
+
+## Spatial Grounding Accuracy
+- VidSTG benchmark: 35.1% accuracy
+- HC-STVG benchmark: 27.3% accuracy[4]
+
+The model's performance is enhanced when using audio integration, but it's important to note that it performs best with:
+- Shorter video clips
+- Consistent camera views
+- Clear audio transcription
+- Well-defined temporal segments
+
+The accuracy can degrade with longer videos or complex scenes that require extensive temporal reasoning[3].
+
+Citations:
+[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/1678275/d8db9e9a-51b2-4b48-a2d0-01f962900ac3/paste.txt
+[2] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/1678275/37bf69a7-970c-48b1-99a4-d4b5dec5780d/paste.txt
+[3] https://arxiv.org/html/2311.13435v2
+[4] https://openreview.net/pdf/5b8e8e8192fda2be20e6e0a4d04972a60bd7fdbc.pdf
+[5] https://openreview.net/pdf/ee697e8c0d4f92a44e85ffbdda620ce31973713d.pdf
+[6] https://www.youtube.com/watch?v=ZbOgzFxLPD4
+[7] https://github.com/mbzuai-oryx/video-llava
