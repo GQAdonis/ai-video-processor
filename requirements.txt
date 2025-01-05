@@ -1,0 +1,13 @@
+torch==2.2.1+cu118
+torchvision==0.17.1+cu118
+torchaudio==2.2.1+cu118
+transformers==4.42.4
+flash-attn==2.2.0
+sentence-transformers==2.7.0
+av
+qdrant-client>=1.7.0
+tqdm
+ffmpeg-python
+python-dotenv
+openai>=1.12.0
+numpy>=1.26.4

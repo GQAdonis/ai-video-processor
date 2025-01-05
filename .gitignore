@@ -1,0 +1,51 @@
+# Environment and configuration
+.env
+.venv/
+env/
+venv/
+ENV/
+.conda/
+*.pyc
+__pycache__/
+.Python
+
+# Model cache and data
+model_cache/
+hls_chunks/
+*.mp4
+*.ts
+*.txt
+!requirements.txt
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+.vs/
+
+# Logs and output
+*.log
+video_interpretation_*.txt
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Qdrant storage
+.qdrant/
+
+# CUDA and build artifacts
+*.so
+*.dll
+*.dylib
+build/
+dist/
+*.egg-info/
+
+# FFmpeg build artifacts
+ffmpeg/
+nv-codec-headers/
